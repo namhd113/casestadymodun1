@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ex01</title>
+</head>
+<body>
+<form>
+<img src="images.jpg" height="500" width="600" id="myImage"/>
+<p>Click button below to move the image to right</p>
+    <input type="button" value="click mee" onclick="moveRight()">
+</form>
+</body>
+</html>
+<script>
+let imgobj = null;
+window.onload = init;
+function init () {
+    imgobj = document.getElementById("myImage");
+    imgobj.style.position = "relative";
+    imgobj.style.left  = "100px";
+}
+function moveRight () {
+    imgobj.style.left = parseInt(imgobj.style.left) + 100 + "px";
+    console.log(imgobj.style.left);
+    console.log(imgobj.src);
+
+
+    if(imgobj.style.left == "500px")
+        imgobj.src = "ds/tam l.jpg";
+    else if(imgobj.style.left == "600px")imgobj.src = "ds/aaa.jpg";
+    else
+    {
+        imgobj.src = "ds/ca ngua.jpg";
+        console.log(imgobj.style);
+    }
+}
+
+</script>
